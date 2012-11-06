@@ -3,15 +3,16 @@ var_dump($_SERVER);
 
 class test{
 	function test(){
-		$a = 100;
+		$a = 1000;
 		return $a;
 	}
 
-	function getA() {
-		$a = $this->test();
+	function getA($a=FALSE) {
+		$a = ($a === FALSE)? $this->test() : $a ;
 		echo $a;
 	}
 }
 
 $test = new test;
-echo $test->getA();
+$value = 1500;
+echo $test->getA($value);
